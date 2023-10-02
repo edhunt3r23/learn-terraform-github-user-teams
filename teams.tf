@@ -2,10 +2,10 @@
 # SPDX-License-Identifier: MPL-2.0
 
 resource "github_team" "all" {
-  for_each = {
+  /* for_each = {
     for team in csvdecode(file("teams.csv")) :
     team.name => team
-  }
+  } */
 
   name                      = each.value.name
   description               = each.value.description
